@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Fitness World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #00ffcc;
+    }
+
+    .hamburger {
+      width: 30px;
+      height: 3px;
+      background-color: #00ffcc;
+      position: relative;
+      cursor: pointer;
+      transition: 0.4s ease;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: #00ffcc;
+      transition: 0.4s ease;
+    }
+
+    .hamburger::before {
+      top: -10px;
+    }
+
+    .hamburger::after {
+      bottom: -10px;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      font-family: 'Orbitron', sans-serif;
+      left: -250px;
+      height: 100vh;
+      width: 250px;
+      background-color: #121212;
+      display: flex;
+      flex-direction: column;
+      padding: 4.5rem 1rem;
+      gap: 1.5rem;
+      transition: 0.3s ease;
+      z-index: 999;
+
+    }
+
+    .menu.active {
+      left: 0;
+      
+      
+    }
+    .menu a:nth-child(1){
+        margin-top: 2rem;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #00ffcc;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-top: 0.5rem;
+      
+    }
+
+    .menu a:hover {
+      color: #ffffff;
+      background-color:#00ffcc;
+      
+    }
+
+    .landing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .landing h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(90deg, #00ffcc, #ff0066);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .landing p {
+      font-size: 1.1rem;
+      max-width: 500px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .landing h1 {
+        font-size: 2.2rem;
+      }
+
+      .menu {
+        width: 200px;
+      }
+
+      .menu a {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">The Fitness World</div>
+    <div id="burger" class="hamburger"></div>
+  </header>
+
+
+  <nav id="sideMenu" class="menu">
+    <a href="tfw-1.html">Monday</a>
+    <a href="tfw-2.html">Tuesday</a>
+    <a href="tfw-3.html">Wednesday</a>
+    <a href="tfw-4.html">Thursday</a>
+    <a href="tfw-5.html">Friday</a>
+    <a href="tfw-6.html">Saturday</a>
+  </nav>
+
+  <section class="landing">
+    <h1>Unleash the Beast Within</h1>
+    <p>Welcome to <strong>The Fitness World</strong> – where strength meets style, and goals become reality. Tap the menu and explore your daily grind!</p>
+  </section>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const sideMenu = document.getElementById('sideMenu');
+
+    burger.addEventListener('click', () => {
+      sideMenu.classList.toggle('active');
+    });
+
+    function showWorkout(day) {
+      alert("Showing exercises for " + day + " (Functionality coming soon!)");
+    }
+  </script>
+</body>
+
+</html>
